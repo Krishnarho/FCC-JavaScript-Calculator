@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&Orbitron&family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #c2c2d6;
+    color: white;
+    font-family: 'Orbitron', Russo One, sans-serif;
+    font-size: 0.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 85px);
+    grid-template-rows: minmax(80px, auto) repeat(5, 65px);
+    border: 2px solid #47476b;
+    background-color: black;
+    padding: 5px;
+}
+
+.screen {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.screen>#display {
+    font-size: 2rem;
+}
+
+.key {
+    font-size: 20px;
+    background-color: #4d4d4d;
+    color: white;
+    outline: 1px solid black;
+    border: none;
+    cursor: default;
+}
+
+.key:hover {
+    border: 1px solid white;
+    color: black;
+    z-index: 999;
+}
+
+.key[id^="clear"] {
+    background-color: rgb(172, 57, 57);
+    grid-column: span 2;
+}
+
+.key[id^="zero"] {
+    grid-column: span 2;
+}
+
+.key[id^="equal"] {
+    background-color: rgb(0, 68, 102);
+    grid-row: span 2;
+}
+
+.key[id^="divide"],
+.key[id^="multiply"],
+.key[id^="subtract"],
+.key[id^="add"] {
+    background-color: rgb(102, 102, 102);
+}
